@@ -257,6 +257,10 @@ class readalongsUI(QMainWindow):
             f"Successfully stopped server. Now you can resubmit new files.")
 
     def align(self):
+        """Align the user specified text and audio file with the given language choice
+
+        Textfile might be XML or plain text here, both work.
+        """
         readalongs.api.align(
             textfile=self.config["textfile"],
             audiofile=self.config["audiofile"],
@@ -266,19 +270,22 @@ class readalongsUI(QMainWindow):
             save_temps=self.config["save_temps"],
         )
 
-    # def prepare(self):
-    #     input_file = self.config["textfile"]
-    #     if not self.config.get("xmlfile"):
-    #         self.config["xmlfile"] = os.path.join(
-    #             self.config["output_base"], save_filename + "-prep.xml"
-    #         )
+    def prepare(self):
+        """Function for future use, when we expand the app to allow preparing
+        the XML from the plain text as a separate action.
 
-    #     out_file = self.config["xmlfile"]
-    #     filehandle, filename = create_input_tei(
-    #         input_file_name=input_file,
-    #         text_language=self.config["language"],
-    #         output_file=out_file,
-    #     )
+        Note: right now this is an untested skeleton function, since the
+        GUI doesn't use it yet.
+        """
+        if not self.config.get("xmlfile"):
+            self.config["xmlfile"] = os.path.join(
+                self.config["output_base"], save_filename + "-prep.xml"
+            )
+        readalongs.api.prepare(
+            plaintextfile=self.config["plaintextfile"],
+            xmlfile=self.config["xmlfile"],
+            language=[self.config["language"], *self.config["g2p_fallbacks"]],
+        )
 
 
 def main():

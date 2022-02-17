@@ -1,6 +1,6 @@
 # readalongs>=0.2.20220126
 
 # The new readalongs.api API has just been added here:
- -e git+https://github.com/ReadAlongs/Studio.git@bb77d3eaa9ceee2fb731804c1fc795ad8c2eb416#egg=readalongs
+ -e git+https://github.com/ReadAlongs/Studio.git@8410136dc129c89d5e913ee0bfe9da81eb21f4dc#egg=readalongs
 
 qtpy==1.11.2
