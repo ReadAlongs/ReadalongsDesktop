@@ -19,7 +19,7 @@ Readalongs is an audiobook alignment tool for indigenous language.
 
 A desktop version of readalongs is developed in order to overcome these three main challenges:
 
-1. Direct users may not be familiar with Linux/Unix, Python, and Docker technologies (e.g. we shall not require users to understand how to use terminal to use this app.)
+1. Direct users may not be familiar with Linux/Unix, Python, and Docker technologies (e.g. we should not require users to understand how to use terminal to use this app.)
 2. Users may have limited access to the internet.
 3. Communities would prefer to perform tasks offline. (data privacy)
 
@@ -70,10 +70,10 @@ or
 conda install pyqt5
 ```
 
-At this point, you shall be able to run the GUI app on your local machine with:
+At this point, you should be able to run the GUI app on your local machine with:
 
 ```bash
-python desktopapp.py
+python desktopApp.py
 ```
 
 (To test:) user may need to install `g2p`, `Studio`, and `SoundSwallower` in the same root directory to make it work.
@@ -98,9 +98,9 @@ On mac (tested on intel chip):
 pyinstaller desktopApp.py --add-data ../g2p/g2p/mappings/langs/langs.pkl:g2p/mappings/langs --add-data ../g2p/g2p/mappings/langs/network.pkl:g2p/mappings/langs --add-data ../SoundSwallower:SoundSwallower
 ```
 
-Then, go to -> dist -> desktopApp. You shall find an executable file named as `desktopApp`
+Then, go to -> dist -> desktopApp. You should find an executable file named as `desktopApp`
 
-Double click on the `desktopApp` executable (wait for a little while) and you shall see the GUI.
+Double click on the `desktopApp` executable (wait for a little while) and you should see the GUI.
 
 PS: For mac m1 users, you may need to install upx first
 
@@ -114,7 +114,7 @@ arch -arm64 brew install --build-from-source upx
 
 In this repo, we also included a small example to run:
 
-1. Start the Desktop app via terminal
+1. Start the Desktop app from the terminal:
 
 ```bash
 python desktopApp.py
@@ -122,12 +122,14 @@ python desktopApp.py
 
 2. Run with provided testing file:
 
-- click the first "Browse" button to upload the sample txt file `1.Welcome.txt`
-- click the second "Browse" button to upload the sample audio file `1.Welcome.mp3`
-- select `iku` as the mapping from the drop done, click "Confirm"
-- click "Next Step"
-- Open a browser and go to `http://localhost:7000/`
+- Click the first "Browse" button to upload the sample txt file `Welcome.txt`.
+- Click the second "Browse" button to upload the sample audio file `Welcome.mp3`.
+- Select `iku` as the mapping from the drop done, click "Confirm".
+- Click "Align your files".
+- Open a browser and go to `http://localhost:7000/`.
 
-3. Exit (need fix) by hit control-C in terminal
+3. Exit (need fix) by hitting control-C in terminal
 
 ## License
+
+[MIT License](LICENSE)
